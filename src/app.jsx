@@ -348,7 +348,6 @@ class App extends React.Component {
                   alt=""
                 />
               </div>
-
               <h1 className="bgwhite text-center">JDT ISLAM POLYTECHNIC COLLEGE</h1>
 
               <div className="btn-container">
