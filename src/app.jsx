@@ -319,12 +319,16 @@ class App extends React.Component {
 
         {!this.state.isConnected && (
           <>
-            <button className="pair" onClick={this.onPair}>
-              Connect
-            </button>
-
+            <div
+              className="container"
+              style={{ backgroundColor: this.state.color }}
+            >
+              <h1 className="white">JDT ISLAM POLYTECHNIC COLLEGE</h1>
+              <br />
+              <h2 className="white">PRESENTED BY COMPUTER ENGINEERING</h2>
+            </div>
             <button className="pair" onClick={this.onTestMode}>
-              Test Mode
+              AI MODE-COMPUTER ENGG.
             </button>
           </>
         )}
@@ -332,8 +336,20 @@ class App extends React.Component {
         {this.state.isConnected && (
           <>
             <div className="picker-container">
-              <h1  style={{ backgroundColor: this.state.color }} className="bgwhite">JDT ISLAM POLYTECHNIC COLLEGE</h1>
-              <h1  style={{ backgroundColor: this.state.color }} className="bgwhite">COMPUTER ENGINEERING</h1>
+              <div className="d-flex">
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/jdtpoly-student.appspot.com/o/JDT%20LOGO%20WHITE-1.png?alt=media&token=8003d4ce-e20f-46c1-acfb-44fbe9b47743"
+                  alt=""
+                  className="inglogo1"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/jdtpoly-student.appspot.com/o/ABRAHAM-CE-LOGO.png?alt=media&token=57b0623b-c428-49be-b778-273e51a3b343"
+                  className="inglogo"
+                  alt=""
+                />
+              </div>
+
+              <h1 className="bgwhite text-center">JDT ISLAM POLYTECHNIC COLLEGE</h1>
 
               <div className="btn-container">
                 <Toggle
@@ -348,7 +364,7 @@ class App extends React.Component {
 
               <div className="btn-container">
                 {this.state.appModel === APP_MODE.RANDOM_COLOR ? (
-                  <div className="btn" onClick={this.onStopRandomGenerate}>
+                  <div className="btn btn-primary" onClick={this.onStopRandomGenerate}>
                     Stop{" "}
                     <span role="img" aria-label="stop">
                       🛑
@@ -414,15 +430,16 @@ class App extends React.Component {
             </div>
 
             <div className="output-container">
-            <h1 className="color">JDT ISLAM POLYTECHNIC COLLEGE</h1>
-              <h1  className="color">COMPUTER ENGINEERING</h1>
-              <h1>{this.state.emotion}</h1>
+              <h1 style={{ color: this.state.color }} className="color">
+                PRESENTED BY
+              </h1>
+
+              <h1 className="color">COMPUTER ENGINEERING</h1>
+              <h1 className="color">{this.state.emotion}</h1>
               <div className="light-bulb">
                 {this.state.isOn && bulbContent}
                 {!this.state.isOn && (
-                  <span role="img" aria-label="wtf" className="emoji">
-                    😱
-                  </span>
+                  <h1 className="color">Artificial Intelligence</h1>
                 )}
               </div>
 
@@ -438,6 +455,8 @@ class App extends React.Component {
 
             {this.state.appModel === APP_MODE.EMOTION && (
               <div className="output-container" ref={this.emotionRef}>
+                <h1 className="color">{this.state.emotion}</h1>
+
                 <video
                   className="video-input"
                   ref={this.videoRef}
